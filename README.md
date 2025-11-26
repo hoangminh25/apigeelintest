@@ -42,3 +42,4 @@ npm install -g apigeelint
 apigeelint -s apiproxy -f table.js
 ```
 # Test private repo
+# Test with Advanced Security enabled
