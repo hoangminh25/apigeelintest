@@ -9,6 +9,7 @@ on:
 permissions:
   contents: read
   security-events: write
+  actions: read
 
 jobs:
   apigeelint:
@@ -36,6 +37,7 @@ jobs:
       with:
         sarif_file: apigeelint.sarif
         category: apigeelint
+        token: ${{ github.token }}
     
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
