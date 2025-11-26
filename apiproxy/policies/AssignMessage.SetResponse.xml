@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage name="AssignMessage.SetResponse">
+    <Set>
+        <Payload contentType="application/json">
+            {"message": "Hello from Apigee"}
+        </Payload>
+    </Set>
+</AssignMessage>

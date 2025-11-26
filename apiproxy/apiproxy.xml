@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy name="sample-api">
+    <Description>Sample API for apigeelint demo</Description>
+    <Proxies>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </Proxies>
+    <Targets>
+        <TargetEndpoint>default</TargetEndpoint>
+    </Targets>
+</APIProxy>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault name="RaiseFault.InvalidRequest">
+    <FaultResponse>
+        <Set>
+            <StatusCode>400</StatusCode>
+            <Payload contentType="application/json">
+                {"error": "Invalid request"}
+            </Payload>
+        </Set>
+    </FaultResponse>
+</RaiseFault>

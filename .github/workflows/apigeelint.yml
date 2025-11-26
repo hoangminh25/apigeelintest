@@ -1,0 +1,42 @@
+name: Apigeelint Code Scanning
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  apigeelint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Install apigeelint
+      run: npm install -g apigeelint
+    
+    - name: Run apigeelint
+      run: apigeelint -s apiproxy -f json.js > apigeelint-raw.json
+      continue-on-error: true
+    
+    - name: Convert to SARIF
+      run: node convert-to-sarif.js
+    
+    - name: Upload to GitHub Code Scanning
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: apigeelint.sarif
+        category: apigeelint
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: apigeelint-results
+        path: |
+          apigeelint-raw.json
+          apigeelint.sarif
