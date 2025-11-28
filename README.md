@@ -22,7 +22,7 @@ apigee-sample/
 
 1. Push to GitLab:
 ```bash
-cd /Users/dm-minh-hoang.dao/Downloads/apigee-sample
+cd apigee-sample
 git init
 git add .
 git commit -m "Initial commit"
